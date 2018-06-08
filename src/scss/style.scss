@@ -1,0 +1,37 @@
+@import "@material/button/mdc-button";
+@import "@material/typography/mdc-typography";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/elevation/mdc-elevation";
+@import "@material/card/mdc-card";
+@import "@material/fab/mdc-fab";
+@import "@material/list/mdc-list";
+@import "@material/theme/mdc-theme";
+@import "@material/snackbar/mdc-snackbar";
+@import "@material/checkbox/mdc-checkbox";
+
+/* animation  button    chips   elevation       form-field   icon-toggle  linear-progress  menu             ripple  selection-control  snackbar  textfield 
+ top-app-bar
+ auto-init  card      dialog  fab             grid-list    image-list   line-ripple      notched-outline  rtl     shape              switch    theme      
+ typography
+ base       checkbox  drawer  floating-label  icon-button  layout-grid  list             radio            select  slider             tabs      toolbar */
+
+body {
+  width: 500px;
+  position: relative;
+  margin-left: 30px;
+}
+
+.mdc-top-app-bar {
+  top: 0;
+  left: 0;
+}
+
+#addFiles {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+#meiFiles, #destDir {
+  display: none;
+}

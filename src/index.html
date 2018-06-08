@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Refine SibMei</title>
+  <meta name="description" content="Refine SibMei">
+  <meta name="author" content="Raff Viglianti">
+
+</head>
+
+<body>
+    <header class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <!-- <button class="material-icons mdc-top-app-bar__navigation-icon mdc-ripple-upgraded--unbounded mdc-ripple-upgraded"
+          style="--mdc-ripple-fg-size:28.799999999999997px; --mdc-ripple-fg-scale:1.6666666666666667; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">menu</button> -->
+          <span class="mdc-top-app-bar__title">Refine sibmei</span>
+        </section>
+        <!-- <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"><button class="material-icons mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Download" style="--mdc-ripple-fg-size:28.799999999999997px; --mdc-ripple-fg-scale:1.6666666666666667; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">file_download</button><button class="material-icons mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Print this page" style="--mdc-ripple-fg-size:28.799999999999997px; --mdc-ripple-fg-scale:1.6666666666666667; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">print</button><button class="material-icons mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Bookmark this page" style="--mdc-ripple-fg-size:28.799999999999997px; --mdc-ripple-fg-scale:1.6666666666666667; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">bookmark</button></section> -->
+      </div>
+    </header>
+    <div class="mdc-top-app-bar--fixed-adjust">
+      <p class="mdc-typography--body1">Automatically clean up and refine MEI files exported from Sibelius using the <a href="https://github.com//music-encoding/sibmei">sibmei</a> plugin v.2.1.0.</p>
+      <p class="mdc-typography--body2">Click on the + sign to select MEI files to refine.</p>
+    </div>
+
+    <div class="mdc-card">
+      <div class="mdc-card__primary-action mdc-ripple-upgraded" tabindex="0" style="--mdc-ripple-fg-size:210px; --mdc-ripple-fg-scale:1.8322599948847984; --mdc-ripple-fg-translate-start:51.5px, -69.19996643066406px; --mdc-ripple-fg-translate-end:70px, -38px;">
+        <div class="demo-card__secondary">
+          <ul class="mdc-list" id="selectedFiles">
+            
+          </ul>
+
+          <span role="listitem" class="mdc-list-item mdc-ripple-upgraded">
+            <span class="mdc-list-item__graphic">
+                <div class="mdc-checkbox mdc-checkbox--upgraded mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.6666666666666667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;"><input class="mdc-checkbox__native-control" value="on" type="checkbox" id="slurs"><div class="mdc-checkbox__background"><svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path></svg><div class="mdc-checkbox__mixedmark"></div></div></div>
+            </span>
+            <span class="mdc-list-item__text">Fix slurs for Verovio (experimental)</span>
+          </span>
+        </div>
+      </div>
+      <div class="mdc-card__actions">
+        <div class="mdc-card__action-buttons">
+          <button id="gorefine" class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded" disabled>Refine</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdc-card">
+        <div class="mdc-card__primary-action mdc-ripple-upgraded" tabindex="0" style="--mdc-ripple-fg-size:210px; --mdc-ripple-fg-scale:1.8322599948847984; --mdc-ripple-fg-translate-start:51.5px, -69.19996643066406px; --mdc-ripple-fg-translate-end:70px, -38px;">
+            <ul id="status" class="mdc-list" id="selectedFiles">
+                
+            </ul>
+        </div>
+    </div>
+
+    <input name="meiFiles" id="meiFiles" multiple type="file" accept=".mei,.xml">
+    <input name="destDir" id="destDir" type="file" webkitdirectory directory>
+
+    <button id="addFiles" class="mdc-fab material-icons mdc-ripple-upgraded" aria-label="Favorite" style="--mdc-ripple-fg-size:33.6px; --mdc-ripple-fg-scale:2.654641651574206; --mdc-ripple-fg-translate-start:4.699999999999999px, 10.133349609375px; --mdc-ripple-fg-translate-end:11.2px, 11.2px;"><span class="mdc-fab__icon">+</span></button>
+    <div class="mdc-snackbar"
+     aria-live="assertive"
+     aria-atomic="true"
+     aria-hidden="true">
+      <div class="mdc-snackbar__text"></div>
+      <div class="mdc-snackbar__action-wrapper">
+        <button type="button" class="mdc-snackbar__action-button"></button>
+      </div>
+    </div>
+    <script src="/refine-sibmei.js"></script>
+  </body>
+</html>
