@@ -22,19 +22,6 @@ function previousSibling( elem, until ) {
   return matched
 }
 
-function saveFile(feilData) {
-  // Save file
-  const a = document.createElement("a")
-  document.body.appendChild(a)
-  a.style = "display: none"
-  const blob = new Blob([fileData.text], {type: "text/xml"})
-  const url = window.URL.createObjectURL(blob)
-  a.href = url
-  a.download = fileData.name
-  a.click();
-  window.URL.revokeObjectURL(url)
-}
-
 function getIdForBeat(tstamp, staff, layer, from) {
   // Get nearest staffDef for slur's @staff and save time signature
   let closestScoreDef = previousSibling(from.closest('measure'), 'scoreDef')
