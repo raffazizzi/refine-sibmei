@@ -70,8 +70,6 @@ function getIdForBeat(tstamp, staff, layer, from) {
       continue
     }
 
-    console.log(beat)
-
     // If matched, return
     if (beat === parseFloat(parseFloat(tstamp).toFixed(2))) {
       return evt.getAttribute('xml:id')
@@ -80,13 +78,13 @@ function getIdForBeat(tstamp, staff, layer, from) {
     // Add this event's duration to the beat
 
     let dur = evt.getAttribute('dur')
+    let duration = 0.00
 
     if (evt.closest('tuplet')) {
       // if this is the last number, round it up.
       const num = parseInt(evt.closest('tuplet').getAttribute('num')) // e.g. 3
       const beatPart = parseFloat((1 / num).toFixed(2)) // e.g. 0.33
       if (beat + beatPart === Math.floor(beat) + (beatPart * num)) { // e.g. 0.99
-        console.log('h')
         beat = Math.round(beat + beatPart)
       } else {
         beat += beatPart
@@ -97,9 +95,9 @@ function getIdForBeat(tstamp, staff, layer, from) {
       } else if (dur === 'long') {
         dur = 0.25
       }
-      let duration = parseFloat(parseFloat(dur).toFixed(2))
+      duration = parseFloat(parseFloat(dur).toFixed(2))
       beat += mUnit / duration
-    }     
+    }
 
     if (evt.getAttribute('dots')) {
       // Quick and dirty solution because maths and MEI restricts 4 dots.
